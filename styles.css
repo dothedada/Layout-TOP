@@ -5,6 +5,7 @@
 	--background: hsl(84, 14%, 7%);
 	--primary: hsl(87, 22%, 74%);
 	--secondary: hsl(85, 31%, 33%);
+	--secondary-shadow: hsla(85 31% 33% / 0.3);
 	--accent: hsl(85, 40%, 57%);
 }
 
@@ -108,14 +109,52 @@ small {
 	padding: 2rem;
 }
 
-.about h2,
+h2,
 .about__social {
 	text-align: center;
 }
 
+main {
+	padding: 2rem;
+}
+
+.portfolio {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-columns: 1;
+	grid-template-rows: 1;
+	margin: 2rem 0;
+	gap: 4rem;
+}
+
+.portfolio__project {
+	box-shadow: 0 10px 40px 10px var(--secondary-shadow);
+	border-radius: 1rem 1rem 0.5rem 0.5rem;
+}
+
+.project__img {
+	width: 100%;
+	aspect-ratio: 3/2;
+	background-color: blue;
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.project__card {
+	padding: 1rem;
+}
+
+.card__name {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+
+
 footer {
 	background-color: var(--primary);
 	color: var(--background);
+	padding: 2rem;
 }
 
 footer h2 {
