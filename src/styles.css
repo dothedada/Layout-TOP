@@ -16,6 +16,8 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
+	/* outline: 1px solid red; */
 }
 
 html {
@@ -111,6 +113,7 @@ a[target="_blank"]::after {
 	padding: 2rem;
 	display: grid;
 	grid-template: 1fr / 1fr;
+	overflow: hidden;
 }
 
 .profile::before {
@@ -131,7 +134,7 @@ a[target="_blank"]::after {
 	background-color: red;
 	width: 100%;
 	aspect-ratio: 1;
-	object-fit: fill;
+	object-fit: cover;
 	grid-row: 1;
 	grid-column: 1;
 }
@@ -199,6 +202,7 @@ main {
 	aspect-ratio: 3/2;
 	background-color: blue;
 	border-radius: 0.5rem 0.5rem 0 0;
+	object-fit: cover;
 }
 
 .project__card {
@@ -217,12 +221,11 @@ main {
 	align-items: center;
 }
 
-
-
 footer {
 	background-color: var(--primary);
 	color: var(--background);
-	padding: 2rem;
+	display: flex;
+	flex-direction: column;
 }
 
 footer h2 {
@@ -231,11 +234,19 @@ footer h2 {
 
 .footer__contact {
 	display: flex;
+	padding: 2rem;
 	flex-direction: column;
 	gap: 1rem;
 }
 
-
+.footer__img {
+	margin: 0;
+	background-color: red;
+	height: 100%;
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+}
 
 /* Accesibilidad */
 .hidden,
