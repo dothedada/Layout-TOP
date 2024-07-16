@@ -8,6 +8,8 @@
 	--shadow: hsla(85 40% 57% / 0.1);
 	--accent: hsl(85, 40%, 57%);
 
+	--padding-global: 1rem;
+
 }
 
 *,
@@ -110,7 +112,7 @@ a[target="_blank"]::after {
 
 .profile {
 	position: relative;
-	padding: 2rem;
+	padding: var(--padding-global);
 	display: grid;
 	grid-template: 1fr / 1fr;
 	overflow: hidden;
@@ -148,7 +150,7 @@ a[target="_blank"]::after {
 }
 
 .about {
-	padding: 2rem;
+	padding: var(--padding-global);
 }
 
 h2,
@@ -180,13 +182,16 @@ h2,
 }
 
 main {
-	padding: 2rem;
+	padding: var(--padding-global);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .portfolio {
 	display: grid;
 	grid-auto-flow: row;
-	grid-template-columns: 1;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 	grid-template-rows: 1;
 	margin: 2rem 0;
 	gap: 4rem;
@@ -206,7 +211,7 @@ main {
 }
 
 .project__card {
-	padding: 1rem;
+	padding: calc(var(--padding-global) / 2);
 }
 
 .project__links {
@@ -219,6 +224,8 @@ main {
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
 }
 
 footer {
@@ -234,7 +241,7 @@ footer h2 {
 
 .footer__contact {
 	display: flex;
-	padding: 2rem;
+	padding: var(--padding-global);
 	flex-direction: column;
 	gap: 1rem;
 }
@@ -247,6 +254,47 @@ footer h2 {
 	aspect-ratio: 1;
 	object-fit: cover;
 }
+
+@media screen and (width >=375px) {
+	:root {
+		--padding-global: 2rem;
+	}
+}
+
+@media screen and (width >=700px) {
+	:root {
+		--padding-global: 3rem;
+	}
+	h2 {
+		text-align: left;
+	}
+
+	footer {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	footer>* {
+		flex: 1;
+	}
+
+	.about__social {
+		display: none;
+	}
+
+	.contact__social {
+		justify-content: flex-start;
+	}
+
+	.footer__img {
+		margin: var(--padding-global);
+		min-height: 400px;
+		border-radius: 1rem;
+
+		aspect-ratio: 2 /3;
+	}
+}
+
 
 /* Accesibilidad */
 .hidden,
