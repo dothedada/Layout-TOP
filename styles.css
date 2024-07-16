@@ -265,6 +265,57 @@ footer h2 {
 	:root {
 		--padding-global: 3rem;
 	}
+	header {
+		position: relative;
+	}
+
+	header::before {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		transform-origin: bottom right;
+		transform: scale(2) rotate(15deg);
+		background-color: var(--secondary);
+	}
+
+	.profile {
+		padding: calc(var(--padding-global) / 2);
+		aspect-ratio: 1;
+		width: 50%;
+		float: left;
+		overflow: unset;
+	}
+
+	.profile__img {
+		aspect-ratio: 1;
+		height: 100%;
+		width: 100%;
+	}
+
+	.profile__name {
+		position: absolute;
+		width: max-content;
+		top: 0;
+		padding: 0;
+		transform: translate(77%, var(--padding-global));
+		width: 130%;
+	}
+
+	.profile::before {
+		display: none;
+	}
+
+	.about {
+		padding: 15rem 0 0 ;
+	}
+
+	.about__description {
+		padding: var(--padding-global);
+	}
 
 	main {
 		align-items: flex-start;
