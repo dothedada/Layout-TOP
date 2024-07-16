@@ -146,7 +146,6 @@ a[target="_blank"]::after {
 	align-self: end;
 	grid-row: 1;
 	grid-column: 1;
-
 }
 
 .about {
@@ -265,6 +264,7 @@ footer h2 {
 	:root {
 		--padding-global: 3rem;
 	}
+
 	header {
 		position: relative;
 	}
@@ -310,7 +310,7 @@ footer h2 {
 	}
 
 	.about {
-		padding: 15rem 0 0 ;
+		padding: 15rem 0 0;
 	}
 
 	.about__description {
@@ -349,6 +349,43 @@ footer h2 {
 
 		aspect-ratio: 2 /3;
 	}
+}
+
+@media screen and (width >=1100px) {
+	body {
+		background-color: red;
+	}
+
+	header {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+
+	header>* {
+		flex: 1;
+	}
+
+	.profile {
+		float: unset;
+	}
+
+	.profile__name {
+		margin: 0;
+		width: 90%;
+		transform: translate(112% , 1rem);
+	}
+
+	.about__description {
+		padding: 0;
+	}
+
+	.about__social {
+		display: flex;
+		justify-content: flex-end;
+		padding: 0 var(--padding-global) 0 0;
+	}
+
 }
 
 
